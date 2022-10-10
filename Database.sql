@@ -1,3 +1,4 @@
+/*Database for web application*/
 use group_project;
 /*Bring into being account*/
 create table biba
