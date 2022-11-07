@@ -12,8 +12,7 @@ create table biba
     last_name varchar(20),
     /*Potential to verify?*/
     email varchar(50),
-    password varchar(40),
-    redo_password varchar(40)
+    password varchar(40)
 );
 /*Log into account*/
 create table lia
@@ -25,6 +24,7 @@ create table lia
 /*Dashboard*/
 create table dashboard
 (
+    login_id integer foreign key,
 	power_use varchar(20),
     water_use varchar(20),
     temperature varchar(20)
@@ -33,6 +33,7 @@ create table dashboard
 create table prediction
 (
 	/*Date entered*/
+    dashboard_id integer foreign key,
     date_entered date,
     power_use varchar(20),
     water_use varchar(20),
@@ -42,6 +43,7 @@ create table prediction
 /*Prepared statement for the actual graph?*/
 create table graph_page
 (
+    dashboard_id foreign key,
 	to_date date,
     from_date date
 );
