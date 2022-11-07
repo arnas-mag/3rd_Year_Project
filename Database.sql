@@ -4,10 +4,10 @@ use group_project;
 
 
 /*Bring into being account*/
-create table biba
+create table create_account
 (
 	/*Unique id*/
-	uid integer auto_increment primary key,
+	unique_id integer auto_increment primary key,
     first_name varchar(20),
     last_name varchar(20),
     /*Potential to verify?*/
@@ -15,15 +15,17 @@ create table biba
     password varchar(40)
 );
 /*Log into account*/
-create table lia
+create table login
 (
-	uid integer auto_increment,
+    login_id auto_increment primary key,
+	unique_id integer foreign key,
     email varchar(50),
     password varchar(40)
 );
 /*Dashboard*/
 create table dashboard
 (
+    dashboard_id integer auto_increment primary key,
     login_id integer foreign key,
 	power_use varchar(20),
     water_use varchar(20),
@@ -32,7 +34,7 @@ create table dashboard
 /*Prediction*/
 create table prediction
 (
-	/*Date entered*/
+	prediction_id integer auto_increment primary key,
     dashboard_id integer foreign key,
     date_entered date,
     power_use varchar(20),
@@ -43,7 +45,8 @@ create table prediction
 /*Prepared statement for the actual graph?*/
 create table graph_page
 (
-    dashboard_id foreign key,
+    graph_page_id integer auto_increment primary key,
+    dashboard_id integer foreign key,
 	to_date date,
     from_date date
 );
