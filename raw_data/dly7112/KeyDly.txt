@@ -1,0 +1,51 @@
+﻿Daily Elements for Climate and  Rainfall stations:
+
+ID	    	ELEMENT                                             Unit       
+
+rain	        Precipitation Amount				mm
+maxtp       	Maximum Air Temperature	                        °C	  
+mintp         	Minimum  Air Temperature	                °C
+gmin		Grass Minimum Temperature 			°C
+soil		10cm Soil Temperature at 09 utc			°C
+ind		indicator (i)
+
+
+
+Indicators        Description - Decode
+                                                        
+
+irain		  Rainfall Indicators:    		0.  Satisfactory
+							1.  Estimated
+							2.  Cumulative,no reading
+							3.  Estimated cumulative total
+							4.  Trace
+							5.  Estimated trace.
+							6.  Cumulative trace
+							7.  Estimated cumulative trace
+							8.  Not available
+							9.  Cumulative total
+
+
+imax		  Temperature Indicators: 		0. positive. 
+							1. negative. 
+							2. estimated positive. 
+							3. estimated negative. 
+							4. not available
+
+
+
+imin		  Temperature Indicators: 		0. positive. 
+							1. negative. 
+							2. estimated positive. 
+							3. estimated negative. 
+							4. not available
+
+
+
+Daily precipitation sums are calculated from 09utc to 09utc.	
+The daily precipitation sum for 09utc to 09utc is assigned to the previous day.  	
+Data refers to period 09utc/D to 09utc/D+1	
+	
+maxtp refers to period 0900utc/D to 0900utc/D+1	
+mintp refers to period 0900utc/D to 0900utc/D-1	
+	
