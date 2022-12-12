@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS group_project;
 create database group_project;
 use group_project;
 /*Forget password*/
@@ -56,3 +57,22 @@ create table graph_page
     constraint graph_page_fk foreign key (dashboard_id) references prediction (dashboard_id)
 );
 
+DROP PROCEDURE IF EXISTS newAccount;
+DELIMITER //
+CREATE PROCEDURE newAccount
+(
+	IN fname varchar(20),
+    IN lname varchar(20),
+    IN eml varchar(50),
+    IN pwd varchar(40)
+)
+BEGIN
+    INSERT INTO create_account (first_name, last_name, email, password) VALUES (fname, lname, eml, pwd);
+END//
+DELIMITER ;
+
+/*Testing 'newAccount' Procedure by checking entries in 'create_account' table, calling the procedure and inputting details, and then checking entries in 'create_account' table again.
+	SELECT * FROM create_account;
+	CALL newAccount('John','Doe','jd@gmail.com','jdg');
+	SELECT * FROM create_account;
+*/
