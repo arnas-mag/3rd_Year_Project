@@ -76,3 +76,14 @@ DELIMITER ;
 	CALL newAccount('John','Doe','jd@gmail.com','jdg');
 	SELECT * FROM create_account;
 */
+
+DROP PROCEDURE IF EXISTS xRefAccount;
+DELIMITER //
+CREATE PROCEDURE xRefAccount
+(
+    IN eml varchar(50)
+)
+BEGIN
+    SELECT password FROM login WHERE email = eml;
+END//
+DELIMITER ;
