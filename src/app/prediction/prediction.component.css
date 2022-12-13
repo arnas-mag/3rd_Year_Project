@@ -1,0 +1,36 @@
+body{
+    background-image: url("/assets/Images/nature.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.content{
+    background-color: #DEF7E1;
+    text-align: center;
+    margin: 7% 13%;
+    width: 50%;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    font-family: "Times New Roman", Times, serif;
+    color: #000000;
+    padding: 12% 12%;
+    font-size: 1.5em;
+}
+.nav-bar{
+    background-color: #DEF7E1;
+    margin: -1.2% 0% 0 0;
+    padding: 1.5% 0% 1.5% 5%;
+    border: 1px solid black;
+    font-size: 1.4em;
+}
+.welcome{
+    margin: -20% 0% 10% 0%;
+}
+.consu{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
