@@ -6,7 +6,14 @@
     <header>
       <img />
       <div class="nav-bar">
-        <app-nav-bar></app-nav-bar>
+            
+        <div class="top-bar">
+          <a href="{% url 'home' %}" class="grid-item"><img src="/static/logo.png" alt="Logo" height="80" width="80" id="logo"></a>
+          <a href="{% url 'dashboard' %}" class="grid-item">Home</a>
+          <a href="{% url 'prediction' %}" class="grid-item">Prediction</a>
+          <a href="{% url 'graph' %}" class="grid-item">Graphs</a>
+          <a href="{% url 'login' %}" class="grid-item" id="signout">Sign Out</a>
+      </div>
       </div>
     </header>
     <div class="content">

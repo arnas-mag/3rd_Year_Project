@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="{% static 'graph.css' %}">
+  <head>
+    <meta charset="UTF-8">
+    <meta hhtp-equiv="X-UA-Compatible" content "IE-edge">  
+    <meta name="viewport" content="width=<device-width>, initial-scale=1">
+      <title>Graph</title>
+  </head>
+<body>
+    <header>
+      <img />
+      <div class="nav-bar">
+        <div class="top-bar">
+            <a href="{% url 'home' %}" class="grid-item"><img src="/static/logo.png" alt="Logo" height="80" width="80" id="logo"></a>
+            <a href="{% url 'dashboard' %}" class="grid-item">Home</a>
+            <a href="{% url 'prediction' %}" class="grid-item">Prediction</a>
+            <a href="{% url 'graph' %}" class="grid-item">Graphs</a>
+            <a href="{% url 'login' %}" class="grid-item" id="signout">Sign Out</a>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+        <div class="title">
+            <h1>Graph of Usage (All)</h1>
+        </div>
+        <div class="graph">
+            <!--Image by Maxim Hopman on unsplash link provided https://unsplash.com/photos/fiXLQXAhCfk -->
+            <img src="/static/graph.jpg" alt="graph" height="500" width="750">
+        </div>
+
+        <h2 id="date">Date</h2>
+
+        <div class="txtbtn">
+            <Label for="fromDate">From Date:</Label>
+            <input type="text" name="fromDate" id="fromDate">
+
+            <Label for="toDate">To Date:</Label>
+            <input type="text" name="toDate" id="toDate">
+
+            <button id="goButton">Go</button>
+        </div>
+
+
+    </div>
+    <footer>
+      <img />
+    </footer>
+  </body>
