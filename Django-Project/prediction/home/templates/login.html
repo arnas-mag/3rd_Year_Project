@@ -2,6 +2,7 @@
 <!-- Date: 02/11/2022 -->
 <!-- Function: Login Page -->
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
   <link rel="stylesheet" href="{% static 'login.css' %}">
@@ -19,15 +20,14 @@
       <div class="login">
         <div class="text-login">
           <h2>Login</h2>
-          <hr />
-          <div class="inputs">
-            Email:<input type="text" /><br /><br />
-            Password:<input type="text" /><br /><br />
-          </div>
+          <form method="POST">
+          {% csrf_token %}
+          {{ register_form|crispy }}
           <div class="login-button">
-            <button>Login</button><br /><br />
+            <button type="submit">Login</button><br /><br />
           </div>
-          <a id="create-account" href="#">Create an Account</a>
+        </form>
+          <a id="create-account" href="{% url 'create_account' %}">Create an Account</a>
         </div>
       </div>
     </div>
