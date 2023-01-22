@@ -18,7 +18,7 @@ def create_account(request):
             user = form.save()
             login(request, user)
             messages.success(request, "Account creation successful." )
-            return redirect("main:home")
+            return redirect("dashboard")
         messages.error(request, "Unsuccessful account creation. Invalid Information.")
     form = NewUserForm()
     return render(request = request, template_name='create_account.html', context={"register_form":form})
@@ -29,7 +29,7 @@ def dashboard(request):
     return render(request, 'dashboard.html')
     #return HttpResponse("this is the dashboard")
 
-def login(request):
+def user_login(request):
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
@@ -39,7 +39,7 @@ def login(request):
             if user is not None:
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}.")
-                return redirect("main:homepage")
+                return redirect("dashboard")
             else:
                 messages.error(request, "Invalid username or password.")
         else:
