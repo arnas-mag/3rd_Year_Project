@@ -1,0 +1,70 @@
+<!-- Name: Vinicius Parzanini, Eoin Delaney, Arnas Magilevičius -->
+<!-- Date: 02/11/2022 -->
+<!-- Function: Dashboard Page -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+  <head>
+    <meta charset="UTF-8">
+    <meta hhtp-equiv="X-UA-Compatible" content "IE-edge">  
+    <meta name="viewport" content="width=<device-width>, initial-scale=1">
+      <title>Dashboard</title>
+  </head>
+<body>
+    <header>
+      <div class="nav-bar">
+        <div class="top-bar">
+            <a href="{% url 'dashboard' %}"><img src="/static/logo.png" alt="Logo" height="80" width="80" id="logo"></a>
+            <a href="{% url 'dashboard' %}" class="grid-item">Home</a>
+            <a href="{% url 'prediction' %}" class="grid-item">Prediction</a>
+            <a href="{% url 'graph' %}" class="grid-item">Graphs</a>
+            <a href="{% url 'login' %}" class="grid-item" id="signout">Sign Out</a>
+          </div>
+            <!-- later  -->
+          <!-- Dropdown menu -->
+            <!-- <div class="dropdownpart">
+              <a href="{% url 'dashboard' %}"><img src="/static/logo.png" alt="Logo" height="80" width="80" id="logo"></a>
+              <div class="dropdown">
+                <img src="/static/Hamburger.png" alt="Dropdown Menu">
+              </div>
+              <div class="dropdown-content">
+                <a href="{% url 'dashboard' %}" class="grid-item">Home</a>
+                <a href="{% url 'prediction' %}" class="grid-item">Prediction</a>
+                <a href="{% url 'graph' %}" class="grid-item">Graphs</a>
+                <a href="{% url 'login' %}" class="grid-item " id="signout">Sign Out</a>
+              </div>
+            </div> -->
+      </div>
+    </header>
+    <main>
+      <br>
+    <div class="content">
+      <div class="welcome">
+        <h1>Welcome! (Person)</h1>
+      </div>
+        <h2>Consumption ( Real Time ), Date/Hour</h2>
+        <div class="consu">
+          <div class="pic1">
+            <h3>Electricity</h3>
+            <img src="/static/elec.png" alt="Electricity" height="150" width="150"><br><br>
+            Measurament goes here
+          </div>
+        <div class="pic2">
+          <h3>Water</h3>
+          <img src="/static/water.png" alt="Water" height="150" width="150"><br><br>
+          Measurament goes here
+        </div>
+        <div class="pic3">
+          <h3>Temperature</h3>
+          <img src="/static/temp.png" alt="Temperature" height="150" width="150"><br><br>
+          Measurament goes here
+        </div>
+      </div>
+    </div>
+  </main>
+    <footer>
+    </footer>
+  </body>
+  </html>
+  
