@@ -12,6 +12,8 @@
       <title>Dashboard</title>
   </head>
 <body>
+  {% block content %}
+  {% if user.is_authenticated %}
     <header>
       <img />
       <div class="nav-bar">
@@ -21,7 +23,7 @@
             <a href="{% url 'dashboard' %}" class="grid-item">Dashboard</a>
             <a href="{% url 'prediction' %}" class="grid-item">Prediction</a>
             <a href="{% url 'graph' %}" class="grid-item">Graphs</a>
-            <a href="{% url 'login' %}" class="grid-item" id="signout">Sign Out</a>
+            <a href="{% url 'logout' %}" class="grid-item" id="signout">Sign Out</a>
         </div>
       </div>
     </header>
@@ -52,5 +54,10 @@
       <img />
     </footer>
   </body>
+  {% else %}
+  <p>You are not Logged in!</p>
+  <a href="{% url 'login' %}">Log In</a>
+  {% endif %}
+  {% endblock %}
   </html>
   
