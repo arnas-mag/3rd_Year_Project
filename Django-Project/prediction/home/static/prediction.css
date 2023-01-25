@@ -68,7 +68,7 @@ body{
 }
 .consu{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
 /* Responsive Dashboard (1850px to 1450px)*/
