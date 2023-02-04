@@ -29,25 +29,34 @@
     <div class="welcome">
       <h1>Prediction</h1>
     </div>
-    <div class="txtbtn">
-      <img src="/static/calendar.png" alt="Calendar" height="40" width="40" id="calendar">
+    <form method="POST">
+      <!--<img src="/static/calendar.png" alt="Calendar" height="40" width="40" id="calendar">
       <Label for="toDate">&nbsp;Enter Date:</Label>
-      <input type="text" name="toDate" id="toDate">
+      <input type="text" name="toDate" id="toDate">-->
+      <Label for="avgTemp">&nbsp;Enter Average Temperature in Celsius:</Label>
+      <input type="text" name="avgTemp" id="avgTemp">
 
-      <button id="goButton">Predict</button>
-  </div>
+      <br>
+
+      <Label for="rainfall">&nbsp;Enter Rainfall in millimeters:</Label>
+      <input type="text" name="rainfall" id="rainfall">
+      {% csrf_token %}
+      {{ data }}
+
+      <button id="goButton" href="{% url 'prediction' %}">Predict</button>
+      </form>
     <br>
     <h2>Consumption Predicted:</h2>
     <div class="consu">
     <div class="pic1">
       <h3>Electricity</h3>
       <img src="/static/elec.png" alt="Electricity" height="150" width="150"><br><br>
-          Prediction Results Here
+          Predicted Power Usage: {{predictPower}}
         </div>
       <div class="pic2">
         <h3>Water</h3>
         <img src="/static/water.png" alt="Water" height="150" width="150"><br><br>
-          Prediction Results Here
+        Predicted Water Usage: {{predictWater}}
       </div>
     </div>
   </div>

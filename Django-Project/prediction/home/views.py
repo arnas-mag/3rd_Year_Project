@@ -3,6 +3,10 @@ from .forms import NewUserForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
+import pandas as pd
+from sklearn import linear_model
+from .forms import data
+import csv
 
 # Create your views here.
 
@@ -50,8 +54,49 @@ def user_login(request):
     #return HttpResponse("this is the login page")
 
 def prediction(request):
-    return render(request, 'prediction.html')
-    #return HttpResponse("this is the prediction page")
+    if request.method == "POST":
+        # create a form instance and populate it with data from the request:
+        form = data(request.POST)
+        if form.is_valid():
+            avgTemp = form.cleaned_data.get('avgTemp')
+            rainfall = form.cleaned_data.get('rainfall')
+            training = pd.read_csv('C:\Django-Project\prediction\home\static/training.csv')
+            
+            # Multiple Linear Regression Algorithm to predict power usage in kWh using Average Temperature and Rainfall
+            # Setting Independant Values to X and Dependant values to y
+            X = training[['Avg Temp (°C)','Rainfall (mm)', ]]
+            y = training['Usage(kWh)']
+
+            # Creating Linear Regression Object
+            regr = linear_model.LinearRegression()
+
+            # Calling fit() method which takes independent and dependent values as parameters and fills the regression object with data that describes the relationship
+            regr.fit(X,y)
+
+            # Prediction of power usage in first row using Average temp and Rainfall
+            predictPower = regr.predict([[avgTemp, rainfall]])
+
+
+            # Multiple Linear Regression Algorithm to predict water usage in L using Average Temperature and Rainfall
+
+            # Setting Independant Values to X and Dependant values to y
+            X = training[['Avg Temp (°C)','Rainfall (mm)', ]]
+            y = training['Usage(L)']
+
+            # Creating Linear Regression Object
+            regr = linear_model.LinearRegression()
+
+            # Calling fit() method which takes independent and dependent values as parameters and fills the regression object with data that describes the relationship
+            regr.fit(X,y)
+            # Prediction of power usage in first row using Average temp and Rainfall
+            predictWater = regr.predict([[avgTemp, rainfall]])
+
+            # Returning Water Usage Prediction
+            return HttpResponse(request, predictPower, predictWater)
+
+    else:
+        return render(request, 'prediction.html')
+        #return HttpResponse("this is the prediction page")
 
 def graph(request):
     return render(request, 'graph.html')

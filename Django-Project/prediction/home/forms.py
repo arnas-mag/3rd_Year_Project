@@ -51,3 +51,7 @@ class NewUserForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+class data(forms.Form):
+    avgTemp = forms.DecimalField(max_digits=10, decimal_places=2)
+    rainfall = forms.DecimalField(max_digits=10, decimal_places=2)
