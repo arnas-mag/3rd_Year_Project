@@ -99,10 +99,21 @@ def prediction(request):
         #return HttpResponse("this is the prediction page")
 
 def graph(request):
-   #  graph_data = []
-       # with open("C:\Django-Project\prediction\home\static/training.csv") as csvfile:
-        #    for row in csv_reader:
-         #       graph_data.append(row)
-              
-        return render(request, 'graph.html')#, {'graph_data' : graph_data})
-    #return HttpResponse("this is the graph page")
+   # Read the data from the CSV file
+        with open("C:\Django-Project\prediction\home\static/training.csv") as f:
+            reader = csv.reader(f)
+            header = next(reader)
+            x_column_index = 0
+            y_column_index = 4
+            x = []
+            y = []
+            for row in reader:
+                x.append(row[x_column_index])
+                y.append(row[y_column_index])
+
+        # Generate the chart using Matplotlib
+        plt.plot(x, y)
+        plt.savefig("C:\Django-Project\prediction\home\static/data.png") 
+
+        # Render the HTML template with the chart
+        return render(request, 'graph.html')
