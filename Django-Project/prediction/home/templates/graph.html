@@ -1,60 +1,28 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <link rel="stylesheet" href="{% static 'graph.css' %}">
-  <head>
-    <meta charset="UTF-8">
-    <meta hhtp-equiv="X-UA-Compatible" content "IE-edge">  
-    <meta name="viewport" content="width=<device-width>, initial-scale=1">
-      <title>Graph</title>
-  </head>
-<body>
-  {% block content %}
-  {% if user.is_authenticated %}
-  <header>
-    <div class="nav-bar">
-      <div class="top-bar">
-          <a href="{% url 'dashboard' %}"><img src="/static/logo.png" alt="Logo" height="80" width="80" id="logo"></a>
-          <a href="{% url 'dashboard' %}" class="grid-item">Home</a>
-          <a href="{% url 'prediction' %}" class="grid-item">Prediction</a>
-          <a href="{% url 'graph' %}" class="grid-item">Graphs</a>
-          <a href="{% url 'logout' %}" class="grid-item" id="signout">Sign Out</a>
-      </div>
-    </div>
-  </header>
-  <main>
-    <div class="content">
-        <div class="title">
-            <h1>Graph of Usage (All)</h1>
-        </div>
-        <div class="graph">
-            <!--Image by Maxim Hopman on unsplash link provided https://unsplash.com/photos/fiXLQXAhCfk -->
-            <img src="/static/graph.jpg" alt="graph" height="500" width="750">
-        </div>
+<div>
+  <canvas id="myChart"></canvas>
+</div>
 
-        <h2 id="date">Date</h2>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        <div class="txtbtn">
-            <Label for="fromDate">From Date:</Label>
-            <input type="text" name="fromDate" id="fromDate">
+<script>
+  const ctx = document.getElementById('myChart');
 
-            <Label for="toDate">To Date:</Label>
-            <input type="text" name="toDate" id="toDate">
-
-            <button id="goButton">Go</button>
-        </div>
-
-
-    </div>
-  </main>
-    <footer>
-      <img />
-    </footer>
-  </body>
-  {% else %}
-  <p>You are not Logged in!</p>
-  <a href="{% url 'login' %}">Log In</a>
-  {% endif %}
-  {% endblock %}
-  </html>
-  
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>

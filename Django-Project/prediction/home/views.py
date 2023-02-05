@@ -99,5 +99,10 @@ def prediction(request):
         #return HttpResponse("this is the prediction page")
 
 def graph(request):
-    return render(request, 'graph.html')
+   #  graph_data = []
+       # with open("C:\Django-Project\prediction\home\static/training.csv") as csvfile:
+        #    for row in csv_reader:
+         #       graph_data.append(row)
+              
+        return render(request, 'graph.html')#, {'graph_data' : graph_data})
     #return HttpResponse("this is the graph page")
