@@ -53,5 +53,6 @@ class NewUserForm(UserCreationForm):
         return user
 
 class data(forms.Form):
-    avgTemp = forms.DecimalField(max_digits=10, decimal_places=2)
+    avgTemp = forms.DecimalField(max_digits=10, decimal_places=2, label='Temperature')
     rainfall = forms.DecimalField(max_digits=10, decimal_places=2)
+    # file = forms.FileField()

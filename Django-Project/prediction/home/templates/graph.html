@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8">
     <meta hhtp-equiv="X-UA-Compatible" content "IE-edge">  
-    <meta name="viewport" content="width=<device-width>, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Graph</title>
   </head>
 <body>
@@ -18,68 +18,29 @@
           <a href="{% url 'dashboard' %}" class="grid-item">Home</a>
           <a href="{% url 'prediction' %}" class="grid-item">Prediction</a>
           <a href="{% url 'graph' %}" class="grid-item">Graphs</a>
-          <a href="{% url 'logout' %}" class="grid-item" id="signout">Sign Out</a>
+          <a href="{% url 'login' %}" class="grid-item" id="signout">Sign Out</a>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-button">Menu</button>
+        <div class="dropdown-content">
+          <a href="{% url 'dashboard' %}" class="grid-item2" id="first">Home</a>
+          <a href="{% url 'prediction' %}" class="grid-item2">Prediction</a>
+          <a href="{% url 'graph' %}" class="grid-item2">Graphs</a>
+          <a href="{% url 'login' %}" class="grid-item2" id="signout">Sign Out</a>
+        </div>
       </div>
     </div>
   </header>
-  <main>
     <div class="content">
+      <main>
         <div class="title">
             <h1>Graph of Usage (All)</h1>
         </div>
+        <div class="graph">
             <!--Image by Maxim Hopman on unsplash link provided https://unsplash.com/photos/fiXLQXAhCfk -->
-              
-             <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>-->
-             <div>
-             <canvas id="chart" width="100" height="100"></canvas>
-           </div>
-           {% csrf_token %}
-           <img src="/static/data.png">
-              <script>
-              //Loading in the dataset
-              //d3.csv('\static\training.csv').then(makeChart);
-              //Values
-              // Date,Rainfall (mm),Max Temp (°C),Min Temp (°C),Usage(L),Usage(kWh),Avg Temp (°C)
-              //Function to make chart
-              /*function makeChart(training)
-              {
-                //Date of recording 
-                var dateLabels = training.map(function(d) {
-                  //I think the error are here
-                  return d.Date;
-                });
-                //Water usage
-                var waterData = training.map(function(d) {
-                  //I think the error are here
-                  return d.Usage(L);
-                });
-
-                var chart = new Chart('chart',{
-                  type: 'horizontalBar',
-                  data:{
-                    labels: dateLabels,
-                    datasets: [
-                      {
-                        data: waterData
-                      }
-                    ]
-                  }
-                });
-              }
-
-              d3.csv('/static/training.csv').then(makeChart);*/
-
-              /*var batch = d3.csv("static/training.csv", function(csv){
-                csv = csv.filter(function(row){
-                  return row['Date'] && row['Usage(L)'];
-                });
-                var Chart = d3.select("body").selectAll("rect").data(csv)
-              });*/
-              </script>  
-
-              
-     
-
+            <!-- <img src="/static/graph.jpg" alt="graph" height="500" width="750"> -->
+        </div>
+        <img src="{% static 'data.png' %}" alt="Chart">
         <h2 id="date">Date</h2>
 
         <div class="txtbtn">
@@ -91,17 +52,17 @@
 
             <button id="goButton">Go</button>
         </div>
-
-
+      </main>
+      <footer>
+        <p><strong>This Website was developed by Arnas Magilevičius, Eoin Delaney and Vinicius Parzanini</strong></p>
+      </footer>
     </div>
-  </main>
-    <footer>
-      <img />
-    </footer>
   </body>
   {% else %}
-  <p>You are not Logged in!</p>
-  <a href="{% url 'login' %}">Log In</a>
+  <div class="notlogged">
+    <p>Oh no! Seems that You are not Logged in!</p>
+    <a href="{% url 'login' %}">Log In</a>
+  </div>
   {% endif %}
   {% endblock %}
   </html>

@@ -4,7 +4,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 100%;
-    height: auto;
+    height: 1300px;
     margin: auto;
 }
 .content{
@@ -23,8 +23,12 @@ body{
 .text-login, h2{
     margin: 12px;
 }
+.form-as-p{
+   font-size: larger;
+   /* margin: auto; */
+}
 h2{
-    font-size: 1.7em;
+    font-size: 2em;
 }
 .text-login, .login{
     opacity: 95%;
@@ -35,29 +39,29 @@ h2{
     font-size: 1.2em;
 }
 hr{
-    width: 45%;
+    width: 65%;
     margin-top: -10px;
+    margin-bottom: 5%;
 }
-.inputs{
+/* .inputs{
     padding-top: 7%;
     padding-left: 12%;
     float: left;
     text-align: right;
-}
+} */
 input{
-    font-size: 1em;
-    background: transparent;
+    font-size: 0.7em;
     border: none;
-    color: #FFFFFF;
+    color: black;
     box-shadow:0 0 1px 1px rgba(0,0,0,0.06);
     white-space: nowrap;
     width: 260px;
-    height: 20px;
+    height: 25px;
     transition: 0.2s;
 }
 .login-button{
     clear: both;
-    margin-top: 30%;
+    margin-top: 10%;
     margin-bottom: 3%;
 }
 button{
@@ -71,4 +75,48 @@ button{
 }
 button:hover{
     opacity: 1;
+}
+@media only screen and (max-width: 1500px){
+    .content{
+        margin-top: 25%;
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 900px){
+    .content{
+        margin-top: 35%;
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 650px){
+    hr{
+        width: 100%;
+    }
+    .content{
+        margin-top: 45%;
+        width: 80%;
+        font-size: small;
+    }
+    .input{
+        width: 50px;
+        margin-left: -50%;
+    }
+    .login-button{
+        width: 200px;
+        padding: 0px;
+        margin-left: 27%;
+    }
+    .login{
+        padding: 10px;
+    }
+}
+@media only screen and (max-width: 470px){
+    .login-button{
+        margin-left: 20%;
+    }
+}
+@media only screen and (max-width: 375px){
+    .login-button{
+        margin-left: 15%;
+    }
 }
