@@ -1,0 +1,319 @@
+body{
+    background-image: url("/static/School.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+}
+/* not logged */
+.notlogged{
+    text-align: center;
+    margin: 18% 42%;
+    border: 1px solid black;
+    padding-bottom: 20px;
+    background-color: black;
+    opacity: 92%;
+    color: white;
+}
+.notlogged a{
+    color: black;
+    border: 1px solid green;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: lightgreen;
+}
+/* Nav bar */
+.nav-bar{
+    background-color: #DEF7E1;
+    border: 1px solid black;
+    font-size: 1.4em;
+    margin: 0px auto;
+    max-width: 100%;
+    position:relative;
+    height: 3.8em;
+    display: -ms-inline-grid;
+    grid-template-columns: 50px 1fr;
+}
+ 
+.top-bar{
+    margin-top: 1.5%;
+}
+
+.grid-item{
+    position: relative;
+    margin-right: 17%;
+}
+
+#signout{
+    float: right;
+    margin-right: 3%;
+}
+
+#logo{
+    float: left;
+    margin-left: 2%;
+    margin-right: 22%;
+    margin-top: -1.3%;
+}
+
+.top-bar, a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+
+/* Dropdown Menu */
+
+.dropdown {
+    display: none;
+    float: right;
+    margin-top: -2.5%;
+    margin-right: -5%;
+  }
+  
+  .dropdown-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+/* Content */
+.content{
+    background-color: #DEF7E1;
+    text-align: center;
+    margin: 7% 13% 7% 13%;
+    width: 50%;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    font-family: "Times New Roman", Times, serif;
+    color: #000000;
+    padding: 12% 12% 0% 12%;
+    font-size: 1.8em;
+    opacity: 92%;
+}
+
+/* Weather Widget */
+.weather{
+    margin-right: auto;
+    margin-top: auto;
+}
+.welcome{
+    margin-left: auto;
+    margin-top: -20%;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+    transition: 0.3s;
+    margin: 5px;
+}
+
+.card img {
+    margin-top: 3%;
+    width: 90%;
+    height: 200px;
+    object-fit: cover;
+  }
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1);
+  }
+/* footer */
+footer{
+    font-size: 0.5em;
+    margin-top: 20%;
+    margin-left: -24%;
+    width: 148%;
+    border-top: 1px solid black;
+    background-color: #2BB2CA;
+    height: 35px;
+}
+/* Responsive Dashboard (1850px to 1450px)*/
+@media only screen and (max-width: 1850px) and (min-width: 1450px){
+    .grid-item{
+        margin-right: 14%;
+    }
+    .top-bar{
+        margin-top: 2%;
+    }
+}
+/* Responsive Dashboard (1450px to 1000px) */
+@media only screen and (max-width: 1450px) and (min-width: 900px){
+    .grid-item{
+        margin-right: 9%;
+    }
+    .top-bar{
+        margin-top: 2.5%;
+    }
+    #logo{
+        margin-top: -2%;
+    }
+    h1{
+        margin-bottom: 20%;
+    }
+    .weather{
+        display: inline-block;
+        margin-right: 0%;
+    }
+    .cards{
+        display: inline-block;
+    }
+}
+
+/* Responsive Dashboard mobile max 900px */
+@media only screen and (max-width: 900px){
+    .nav-bar{
+        font-size: large;
+    }
+    .grid-item{
+        margin-right: 4%;
+        display: none;
+    }
+    .top-bar{
+        margin-top: 4%;
+    }
+
+    #logo{
+        margin-top: -4%;
+        margin-right: 15%;
+    }
+    /* content */
+    h1{
+        margin-bottom: 20%;
+        margin-left: 5%;
+    }
+    iframe{
+        display: inline-block;
+    }
+    .content{
+        margin-top: 30%;
+    }
+    .cards{
+        display: inline-block;
+    }
+    /* Dropdown menu */
+
+    .dropdown {
+        /* position: relative; */
+        display: inline-block;
+        margin-right: 1%;
+        margin-bottom: 0%;
+        opacity: 90%;
+      }
+      
+      .dropdown-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border: solid 1px black;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: #DEF7E1;
+        min-width: 100%;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        margin-top: 0.3%;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      
+      .dropdown-button:focus + .dropdown-content {
+        display: block;
+      }
+      #first{
+        border-top: solid 1px black;
+      }
+      .grid-item2{
+        border-bottom: solid 1px black;
+        border-left: solid 1px black;
+        border-right: solid 1px black;
+        text-align: center;
+      }
+      #signout{
+        min-width: 95.7%;
+        text-align: center;
+        margin-right: 0%;
+        border-left: solid 1px black;
+        border-right: solid 1px black;
+      }
+      footer{
+        font-size: 0.4em;
+      }
+}
+
+@media only screen and (max-width: 550px){
+    .nav-bar{
+        font-size: large;
+    }
+    .grid-item{
+        margin-right: 2%;
+    }
+    .top-bar{
+        margin-top: 2%;
+    }
+
+    #logo{
+        margin-top: -4%;
+        margin-right: 5%;
+    }
+    .dropdown{
+        margin-top: 0%;
+    }
+    .dropdown-content{
+        margin-top: 1.7%;
+    }
+    /* content */
+    h1{
+        margin-right: 5%;
+    }
+    .content{
+        margin-top: 40%;
+        font-size: 0.6em;
+    }
+}

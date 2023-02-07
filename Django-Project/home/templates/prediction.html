@@ -1,0 +1,95 @@
+<!-- Name: Vinicius Parzanini, Eoin Delaney, Arnas Magilevičius -->
+<!-- Date: 13/12/2022 -->
+<!-- Function: Prediction Page -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="{% static 'prediction.css' %}">
+  <head>
+    <meta charset="UTF-8">
+    <meta hhtp-equiv="X-UA-Compatible" content "IE-edge">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Prediction</title>
+  </head>
+<body>
+  {% block content %}
+  {% if user.is_authenticated %}
+  <header>
+    <div class="nav-bar">
+      <div class="top-bar">
+          <a href="{% url 'dashboard' %}"><img src="/static/logo.png" alt="Logo" height="80" width="80" id="logo"></a>
+          <a href="{% url 'dashboard' %}" class="grid-item">Home</a>
+          <a href="{% url 'prediction' %}" class="grid-item">Prediction</a>
+          <a href="{% url 'graph' %}" class="grid-item">Graphs</a>
+          <a href="{% url 'login' %}" class="grid-item" id="signout">Sign Out</a>
+      </div>
+    
+    <div class="dropdown">
+      <button class="dropdown-button">Menu</button>
+      <div class="dropdown-content">
+        <a href="{% url 'dashboard' %}" class="grid-item2" id="first">Home</a>
+        <a href="{% url 'prediction' %}" class="grid-item2">Prediction</a>
+        <a href="{% url 'graph' %}" class="grid-item2">Graphs</a>
+        <a href="{% url 'login' %}" class="grid-item2" id="signout">Sign Out</a>
+      </div>
+    </div>
+    </div>
+  </header>
+  <div class="content">
+    <div class="contents">
+    <h1>Weather in the next 7 days</h1>
+    <p><iframe src="https://www.meteoblue.com/en/weather/widget/daily/thurles_ireland_2961214?geoloc=fixed&days=7&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&precipunit=MILLIMETER&coloured=coloured&pictoicon=0&pictoicon=1&maxtemperature=0&maxtemperature=1&mintemperature=0&mintemperature=1&windspeed=0&windgust=0&winddirection=0&uv=0&humidity=0&precipitation=0&precipitation=1&precipitationprobability=0&precipitationprobability=1&spot=0&pressure=0&layout=light"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 528px; height: 460px"></iframe><div><!-- DO NOT REMOVE THIS LINK --><a href="https://www.meteoblue.com/en/weather/week/thurles_ireland_2961214?utm_source=weather_widget&utm_medium=linkus&utm_content=daily&utm_campaign=Weather%2BWidget" target="_blank" rel="noopener"></a></div></p>
+    <div class="welcome">
+      <h1>Prediction</h1>
+      <h4>Please enter the Average Temperature and the Rainfall to Predict</h4>
+    </div>
+    <form method="POST" enctype="multipart/form-data">
+      <!-- <img src="/static/calendar.png" alt="Calendar" height="40" width="40" id="calendar"> -->
+      <!-- <Label for="toDate">&nbsp;Enter Date:</Label> -->
+      <!-- <input type="text" name="toDate" id="toDate">  -->
+      <!-- <Label for="avgTemp">&nbsp;Enter Average Temperature in Celsius:</Label>
+      <input type="text" name="avgTemp" id="avgTemp">
+
+      <br>
+
+      <Label for="rainfall">&nbsp;Enter Rainfall in millimeters:</Label>
+      <input type="text" name="rainfall" id="rainfall"> -->
+      {% csrf_token %}
+      {{ form }}
+      {{ data }}
+
+      <button id="goButton" href="{% url 'prediction' %}">Predict</button>
+      </form>
+    <br>
+    <h2>Consumption Predicted:</h2>
+    <div class="consu">
+    <div class="pic1">
+      <h3>Electricity</h3>
+      <img src="/static/elec.png" alt="Electricity" height="150" width="150"><br><br>
+          {% if predictPower %}
+            <div>Predicted Power Usage: {{ predictPower|floatformat:2 }} kWh</div>
+          {% endif %}
+        </div>
+      <div class="pic2">
+        <h3>Water</h3>
+        <img src="/static/water.png" alt="Water" height="150" width="150"><br><br>
+        {% if predictWater %}
+          <div>Predicted Water Usage: {{ predictWater|floatformat:2 }} L</div>
+        {% endif %}  
+      </div>
+    </div>
+    </div>
+  <footer>
+    <p><strong>This Website was developed by Arnas Magilevičius, Eoin Delaney and Vinicius Parzanini</strong></p>
+  </footer>
+  </div>
+</body>
+{% else %}
+<div class="notlogged">
+  <p>Oh no! Seems that You are not Logged in!</p>
+  <a href="{% url 'login' %}">Log In</a>
+</div>
+{% endif %}
+{% endblock %}
+</html>
+  

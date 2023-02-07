@@ -1,0 +1,122 @@
+body{
+    background-image: url("/static/School.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    height: 1300px;
+    margin: auto;
+}
+.content{
+    text-align: center;
+    margin: 15% auto;
+    width: 30%;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    font-family: "Times New Roman", Times, serif;
+    color: #FFFFFF;
+}
+.login{
+    padding: 60px;
+    background-color: #000000;
+}
+.text-login, h2{
+    margin: 12px;
+}
+.form-as-p{
+   font-size: larger;
+   /* margin: auto; */
+}
+h2{
+    font-size: 2em;
+}
+.text-login, .login{
+    opacity: 95%;
+}
+.text-login{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    opacity: 100%;
+    font-size: 1.2em;
+}
+hr{
+    width: 65%;
+    margin-top: -10px;
+    margin-bottom: 5%;
+}
+/* .inputs{
+    padding-top: 7%;
+    padding-left: 12%;
+    float: left;
+    text-align: right;
+} */
+input{
+    font-size: 0.7em;
+    border: none;
+    color: black;
+    box-shadow:0 0 1px 1px rgba(0,0,0,0.06);
+    white-space: nowrap;
+    width: 260px;
+    height: 25px;
+    transition: 0.2s;
+}
+.login-button{
+    clear: both;
+    margin-top: 10%;
+    margin-bottom: 3%;
+}
+button{
+    width: 33%;
+    padding: 5px 0 5px 0;
+    border-radius: 10px;
+    background-color: #B2C3FC;
+    font-size: 1.1em;
+    transition: 0.3s;
+    opacity: 0.6;
+}
+button:hover{
+    opacity: 1;
+}
+@media only screen and (max-width: 1500px){
+    .content{
+        margin-top: 25%;
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 900px){
+    .content{
+        margin-top: 35%;
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 650px){
+    hr{
+        width: 100%;
+    }
+    .content{
+        margin-top: 45%;
+        width: 80%;
+        font-size: small;
+    }
+    .input{
+        width: 50px;
+        margin-left: -50%;
+    }
+    .login-button{
+        width: 200px;
+        padding: 0px;
+        margin-left: 27%;
+    }
+    .login{
+        padding: 10px;
+    }
+}
+@media only screen and (max-width: 470px){
+    .login-button{
+        margin-left: 20%;
+    }
+}
+@media only screen and (max-width: 375px){
+    .login-button{
+        margin-left: 15%;
+    }
+}
