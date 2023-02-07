@@ -8,6 +8,23 @@ body
     height: auto;
     margin: auto;
 }
+/* not logged */
+.notlogged{
+    text-align: center;
+    margin: 18% 42%;
+    border: 1px solid black;
+    padding-bottom: 20px;
+    background-color: black;
+    opacity: 92%;
+    color: white;
+}
+.notlogged a{
+    color: black;
+    border: 1px solid green;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: lightgreen;
+}
 
 /* Nav bar */
 .nav-bar{
@@ -49,6 +66,44 @@ body
     font-weight: 700;
 }
 
+/* Dropdown Menu */
+
+.dropdown {
+    display: none;
+    float: right;
+    margin-top: -2.5%;
+    margin-right: -5%;
+  }
+  
+  .dropdown-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
 /* Content */
 .content
 {
@@ -60,19 +115,19 @@ body
     border-radius: 3px;
     font-family: "Times New Roman", Times, serif;
     color: #000000;
-    padding: 12% 12%;
+    padding: 12% 12% 0% 12%;
     font-size: 1.5em;
     opacity: 92%;
 }
-.welcome
+/* .welcome
 {
     margin: -20% 0% 10% 0%;
-}
-.consu
+} */
+/* .consu
 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-}
+} */
 
 #date
 {
@@ -88,6 +143,16 @@ body
 {
     margin-left: 10px;
     margin-right: 70px;
+}
+/* footer */
+footer{
+    font-size: 0.5em;
+    margin-top: 20%;
+    margin-left: -24%;
+    width: 148%;
+    border-top: 1px solid black;
+    background-color: #2BB2CA;
+    height: 35px;
 }
 
 /* Responsive Dashboard (1850px to 1450px)*/
@@ -120,6 +185,7 @@ body
     }
     .grid-item{
         margin-right: 4%;
+        display: none;
     }
     .top-bar{
         margin-top: 4%;
@@ -129,13 +195,75 @@ body
         margin-top: -4%;
         margin-right: 15%;
     }
+     /* Dropdown menu */
+
+     .dropdown {
+        /* position: relative; */
+        display: inline-block;
+        margin-right: 1%;
+        margin-bottom: 0%;
+        opacity: 90%;
+      }
+      
+      .dropdown-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border: solid 1px black;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: #DEF7E1;
+        min-width: 100%;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        margin-top: 0.3%;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      
+      .dropdown-button:focus + .dropdown-content {
+        display: block;
+      }
+      #first{
+        border-top: solid 1px black;
+      }
+      .grid-item2{
+        border-bottom: solid 1px black;
+        border-left: solid 1px black;
+        border-right: solid 1px black;
+        text-align: center;
+      }
+      #signout{
+        min-width: 95.7%;
+        text-align: center;
+        margin-right: 0%;
+        border-left: solid 1px black;
+        border-right: solid 1px black;
+      }
     /* content */
     .content{
         margin-top: 30%;
     }
-    .consu{
-        display: block;
-    }
+    footer{
+        font-size: 0.4em;
+      }
 }
 
 @media only screen and (max-width: 550px){
@@ -152,6 +280,12 @@ body
     #logo{
         margin-top: -4%;
         margin-right: 5%;
+    }
+    .dropdown{
+        margin-top: 0%;
+    }
+    .dropdown-content{
+        margin-top: 1.7%;
     }
     /* content */
     .content{

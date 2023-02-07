@@ -9,12 +9,13 @@ body{
 }
 .content{
     text-align: center;
-    margin: 15% auto;
+    margin: 7% auto;
     width: 30%;
     border: 1px solid #000000;
     border-radius: 3px;
     font-family: "Times New Roman", Times, serif;
     color: #FFFFFF;
+    margin-bottom: 30%;
 }
 .login{
     padding: 30px;
@@ -46,15 +47,22 @@ hr{
 }
 input{
     font-size: 1em;
-    background: transparent;
     border: none;
-    color: #FFFFFF;
+    color: black;
     box-shadow:0 0 1px 1px rgba(0,0,0,0.06);
     white-space: nowrap;
-    width: 280px;
+    width: 100%;
     height: 20px;
     transition: 0.2s;
+    margin-bottom: 2%;
+    text-align: center;
 }
+/* Making every input in the creation account from skipping one line */
+/* 'username', 'first_name', 'last_name','email', 'password1', 'password2' */
+/* input[type='username'], input{
+    /* width: 100%;  */
+    /* margin-bottom: 5%;
+} */
 button{
     margin-top: 3%;
     width: 35%;
@@ -67,4 +75,31 @@ button{
 }
 button:hover{
     opacity: 1;
+}
+@media only screen and (max-width: 1300px){
+    .content{
+        width: 50%;
+        margin-bottom: 40%;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .content{
+        width: 60%;
+        margin-bottom: 50%;
+    }
+}
+@media only screen and (max-width: 650px){
+    .content{
+        width: 70%;
+        margin-top: 30%;
+        margin-bottom: 60%;
+        font-size: small;
+    }
+}
+@media only screen and (max-width: 400px){
+    .content{
+        width: 95%;
+
+    }
 }
