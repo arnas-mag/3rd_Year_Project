@@ -99,21 +99,30 @@ def prediction(request):
         #return HttpResponse("this is the prediction page")
 
 def graph(request):
-   # Read the data from the CSV file
-        with open("C:\Django-Project\prediction\home\static/training.csv") as f:
-            reader = csv.reader(f)
-            header = next(reader)
-            x_column_index = 0
-            y_column_index = 4
-            x = []
-            y = []
-            for row in reader:
-                x.append(row[x_column_index])
-                y.append(row[y_column_index])
+    # Read the data from the CSV file
+        #with open("C:\Django-Project\prediction\home\static/training.csv") as f:
+        #    reader = csv.reader(f)
+         #   header = next(reader)
+         #   x_column_index = 0
+         #   y_column_index = 5
+         #   x = []
+         #   y = []
+         #   for row in reader:
+         #           x.append(row[x_column_index])
+         #           y.append(row[y_column_index])
 
-        # Generate the chart using Matplotlib
-        plt.plot(x, y)
-        plt.savefig("C:\Django-Project\prediction\home\static/data.png") 
+            # Generate the chart using Matplotlib
+          #  plt.plot(x, y)
+            training = pd.read_csv('C:\Django-Project\prediction\home\static/training.csv')
+            
+            #training.loc[(training['Date'] >= '2019/12/18') & (training['Date'] <= '2022/08/31')]
+            #training.loc[(training['Date'] == '2013/10/21') & (training['Date'] == '2014/10/21')]
+            y = training['Date'].head(20)
+            X = training['Usage(kWh)'].head(20)
 
-        # Render the HTML template with the chart
-        return render(request, 'graph.html')
+            plt.plot(X,y)
+            
+            plt.savefig("C:\Django-Project\prediction\home\static/data.png") 
+
+            # Render the HTML template with the chart
+            return render(request, 'graph.html')
